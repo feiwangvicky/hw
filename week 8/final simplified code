@@ -1,0 +1,47 @@
+const int  buttonPin = 2;
+int buttonPushCounter = 0;
+int buttonState = 0;
+int lastButtonState = 0;
+
+#include <Servo.h>
+Servo myservo;
+
+
+void setup() {
+  myservo.attach(9);
+  pinMode(buttonPin, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  buttonState = digitalRead(buttonPin);
+  int positions[] = {0, 30, 60, 90, 120, 150};
+
+  if (buttonState != lastButtonState) {
+
+    if (buttonState == HIGH) {
+
+      buttonPushCounter++;
+      Serial.println("on");
+      Serial.print("number of button pushes:  ");
+      Serial.println(buttonPushCounter);
+
+      if (buttonPushCounter % 6 == 0) {
+        buttonPushCounter = 0;
+      }
+      myservo.write(positions[buttonPushCounter]);
+
+    }
+    else {
+
+      Serial.println("off");
+
+      delay(100);
+    }
+
+    lastButtonState = buttonState;
+
+
+
+  }
+}
