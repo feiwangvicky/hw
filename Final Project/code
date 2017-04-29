@@ -1,0 +1,144 @@
+
+#include "CORE.h"
+#include <Servo.h>
+
+ 
+CORE_LOCATOR_360 IR;// Create an instance of the class CORE_LOCATOR named IR1 at the default I2C address (0x10)
+Servo myservo;  // create servo object to control a servo
+
+void setup(){
+  // Initialize serial communications at 9600 baud
+  Serial.begin(9600);
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+   int variable; // the direction of the infrared ray transmit ball
+   int variable2; // the distance of the infrared ray transmit ball
+   pinMode (5,OUTPUT); // attaches the first DC motor on pin 5 to cotrol it
+   pinMode(6,OUTPUT); // attaches the first DC motor on pin 6 to cotrol it
+
+  
+}
+
+void loop(){
+  
+  // Continuously print the device readings to the serial monitor 
+  Serial.print("1200Hz heading = ");
+  Serial.println(IR.getHeading(1200), DEC);
+  Serial.print("   intensity = ");
+  Serial.println(IR.getIntensity(1200), DEC);  
+  
+
+  
+  int variable = IR.getHeading(1200);
+  int variable2 = IR.getIntensity(1200);
+  
+ if (variable2 >= 100) {                
+  delay(500); 
+  digitalWrite (5,0);
+  digitalWrite (6,0);     
+  }
+   // When the vehicle is closed to the ball, it will stop moving
+  else if (variable > 53 && variable <= 56) {
+  myservo.write(90);                 
+  delay(500);  
+  analogWrite (5,100);
+   analogWrite (6,120);  
+  }
+   // When the ball's direction is between 53 to 56, the servo motor will move to 90 dgrees
+   
+  else if (variable > 49 && variable<=52) {
+  myservo.write(75);                 
+  delay(500);
+   analogWrite (5,100);
+   analogWrite (6,120);      
+  }
+ // When the ball's direction is between 49 to 52, the servo motor will move to 75 dgrees
+ 
+  else if (variable > 45 && variable<=48) {
+  myservo.write(60);                 
+  delay(500);  
+  analogWrite (5,100);
+  analogWrite (6,120);    
+  }
+ // When the ball's direction is between 45 to 48, the servo motor will move to 60 dgrees
+ 
+  else if (variable > 41 && variable<=44) {
+  myservo.write(45);                 
+  delay(500);
+  analogWrite (5,100);
+  analogWrite (6,120);       
+  }
+ // When the ball's direction is between 41 to 44, the servo motor will move to 45 dgrees
+ 
+  else if (variable > 38 && variable<=40) {
+  myservo.write(60);                 
+  delay(500);  
+  analogWrite(5,100);
+  analogWrite (6,120);    
+  }
+ // When the ball's direction is between 38 to 40, the servo motor will move to 60 dgrees
+ 
+  else if (variable > 25 && variable<=30) {
+  myservo.write(30);                 
+  delay(500); 
+  analogWrite (5,100);
+  analogWrite (6,120);      
+  }
+ // When the ball's direction is between 25 to 30, the servo motor will move to 30 dgrees
+ 
+  else if (variable > 35 && variable<=37) {
+  myservo.write(0);                 
+  delay(500); 
+  analogWrite (5,100);
+  analogWrite (6,120);     
+  }
+ // When the ball's direction is between 35 to 37, the servo motor will move to 0 dgree
+ 
+  else if (variable > 57 && variable<=60) {
+  myservo.write(110);                 
+  delay(500);  
+  analogWrite (5,100);
+  analogWrite (6,120);    
+  }
+ // When the ball's direction is between 57 to 60, the servo motor will move to 110 dgrees
+ 
+  else if (variable > 61 && variable<=64) {
+  myservo.write(130);                 
+  delay(500); 
+  analogWrite (5,100);
+  analogWrite (6,120);     
+  }
+ // When the ball's direction is between 61 to 64, the servo motor will move to 130 dgrees
+ 
+  else if (variable > 65 && variable<=68) {
+  myservo.write(150);                 
+  delay(500);  
+  analogWrite (5,100);
+  analogWrite (6,120);     
+  }
+ // When the ball's direction is between 65 to 68, the servo motor will move to 150 dgrees
+ 
+  else if (variable > 69 && variable<=71) {
+  myservo.write(180);                 
+  delay(500); 
+ analogWrite (5,100);
+ analogWrite (6,120);     
+  }
+ // When the ball's direction is between 69 to 71, the servo motor will move to 180 dgrees
+ 
+   else if (variable > 0 && variable<=34) {
+  myservo.write(90);                 
+  delay(500); 
+  analogWrite (5,140);
+  analogWrite (6,0);     
+  }
+ // When the ball's direction is between 0 to 34, the servo motor will move to 90 dgrees and the vehicle will turn around
+ 
+   else if (variable = 255) {
+  myservo.write(90);                 
+  delay(500); 
+  analogWrite (5,0);
+  analogWrite (6,0);     
+  }
+ // When the ball is turn off, the servo motor will move to 90 dgrees and the vehicle will stop 
+   
+}
