@@ -44,7 +44,7 @@ void loop(){
   analogWrite (5,100);
    analogWrite (6,120);  
   }
-   // When the ball's direction is between 53 to 56, the servo motor will move to 90 dgrees
+   // When the ball's direction is between 53 to 56, the servo motor will move to 90 degrees
    
   else if (BallDirection > 49 && BallDirection<=52) {
   myservo.write(75);                 
@@ -52,7 +52,7 @@ void loop(){
    analogWrite (5,100);
    analogWrite (6,120);      
   }
- // When the ball's direction is between 49 to 52, the servo motor will move to 75 dgrees
+ // When the ball's direction is between 49 to 52, the servo motor will move to 75 degrees
  
   else if (BallDirection > 45 && BallDirection<=48) {
   myservo.write(60);                 
@@ -60,7 +60,7 @@ void loop(){
   analogWrite (5,100);
   analogWrite (6,120);    
   }
- // When the ball's direction is between 45 to 48, the servo motor will move to 60 dgrees
+ // When the ball's direction is between 45 to 48, the servo motor will move to 60 degrees
  
   else if (BallDirection > 41 && BallDirection<=44) {
   myservo.write(45);                 
@@ -68,7 +68,7 @@ void loop(){
   analogWrite (5,100);
   analogWrite (6,120);       
   }
- // When the ball's direction is between 41 to 44, the servo motor will move to 45 dgrees
+ // When the ball's direction is between 41 to 44, the servo motor will move to 45 degrees
  
   else if (BallDirection > 38 && BallDirection<=40) {
   myservo.write(60);                 
@@ -76,7 +76,7 @@ void loop(){
   analogWrite(5,100);
   analogWrite (6,120);    
   }
- // When the ball's direction is between 38 to 40, the servo motor will move to 60 dgrees
+ // When the ball's direction is between 38 to 40, the servo motor will move to 60 degrees
  
   else if (BallDirection > 25 && BallDirection<=30) {
   myservo.write(30);                 
@@ -84,7 +84,7 @@ void loop(){
   analogWrite (5,100);
   analogWrite (6,120);      
   }
- // When the ball's direction is between 25 to 30, the servo motor will move to 30 dgrees
+ // When the ball's direction is between 25 to 30, the servo motor will move to 30 degrees
  
   else if (BallDirection > 35 && BallDirection<=37) {
   myservo.write(0);                 
@@ -92,7 +92,7 @@ void loop(){
   analogWrite (5,100);
   analogWrite (6,120);     
   }
- // When the ball's direction is between 35 to 37, the servo motor will move to 0 dgree
+ // When the ball's direction is between 35 to 37, the servo motor will move to 0 degree
  
   else if (BallDirection > 57 && BallDirection<=60) {
   myservo.write(110);                 
@@ -100,7 +100,7 @@ void loop(){
   analogWrite (5,100);
   analogWrite (6,120);    
   }
- // When the ball's direction is between 57 to 60, the servo motor will move to 110 dgrees
+ // When the ball's direction is between 57 to 60, the servo motor will move to 110 degrees
  
   else if (BallDirection > 61 && BallDirection<=64) {
   myservo.write(130);                 
@@ -108,7 +108,7 @@ void loop(){
   analogWrite (5,100);
   analogWrite (6,120);     
   }
- // When the ball's direction is between 61 to 64, the servo motor will move to 130 dgrees
+ // When the ball's direction is between 61 to 64, the servo motor will move to 130 degrees
  
   else if (BallDirection > 65 && BallDirection<=68) {
   myservo.write(150);                 
@@ -116,7 +116,7 @@ void loop(){
   analogWrite (5,100);
   analogWrite (6,120);     
   }
- // When the ball's direction is between 65 to 68, the servo motor will move to 150 dgrees
+ // When the ball's direction is between 65 to 68, the servo motor will move to 150 degrees
  
   else if (BallDirection > 69 && BallDirection<=71) {
   myservo.write(180);                 
@@ -124,7 +124,7 @@ void loop(){
  analogWrite (5,100);
  analogWrite (6,120);     
   }
- // When the ball's direction is between 69 to 71, the servo motor will move to 180 dgrees
+ // When the ball's direction is between 69 to 71, the servo motor will move to 180 degrees
  
    else if (BallDirection > 0 && BallDirection<=34) {
   myservo.write(90);                 
@@ -132,7 +132,7 @@ void loop(){
   analogWrite (5,140);
   analogWrite (6,0);     
   }
- // When the ball's direction is between 0 to 34, the servo motor will move to 90 dgrees and the vehicle will turn around
+ // When the ball's direction is between 0 to 34, the servo motor will move to 90 degrees and the vehicle will turn around
  
    else if (BallDirection = 255) {
   myservo.write(90);                 
@@ -140,6 +140,6 @@ void loop(){
   analogWrite (5,0);
   analogWrite (6,0);     
   }
- // When the ball is turn off, the servo motor will move to 90 dgrees and the vehicle will stop 
+ // When the ball is turn off, the servo motor will move to 90 degrees and the vehicle will stop 
    
 }
